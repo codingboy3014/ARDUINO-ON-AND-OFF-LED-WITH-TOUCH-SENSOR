@@ -1,0 +1,22 @@
+Components:
+Arduino Uno
+Touch Sensor (e.g., TTP223)
+LED
+220 ohm resistor (for the LED)
+Jumper wires
+Breadboard (optional)
+
+Connections:
+
+
+Touch Sensor (TTP223) to Arduino:
+VCC (Touch Sensor) → 5V (Arduino)
+GND (Touch Sensor) → GND (Arduino)
+SIG (Touch Sensor) → Pin 2 (Arduino)
+
+
+
+LED to Arduino:
+Anode (longer leg) of the LED → Pin 13 (Arduino)
+Cathode (shorter leg) of the LED → One side of the 220-ohm resistor
+The other side of the 220-ohm resistor → GND (Arduino)
