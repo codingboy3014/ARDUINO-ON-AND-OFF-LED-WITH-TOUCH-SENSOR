@@ -1,0 +1,31 @@
+// Pin Definitions
+const int touchPin = 2; // Pin connected to the touch sensor
+const int ledPin = 13;  // Pin connected to the LED
+
+// Variable to store the touch sensor state
+int touchState = 0;  
+int lastTouchState = 0;  // Variable to store the last touch state
+bool ledState = false;    // Variable to store the LED state (on or off)
+
+void setup() {
+  // Initialize the pin modes
+  pinMode(touchPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  // Read the state of the touch sensor
+  touchState = digitalRead(touchPin);
+
+  // Check if the touch sensor state has changed (from LOW to HIGH)
+  if (touchState == HIGH && lastTouchState == LOW) {
+    // Toggle the LED state
+    ledState = !ledState;
+    // Update the LED based on the ledState
+    digitalWrite(ledPin, ledState ? HIGH : LOW);
+    delay(200); // Small delay to debounce the touch sensor
+  }
+
+  // Save the current touch state for the next loop
+  lastTouchState = touchState;
+}
